@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+body{
+    background-color: #43455a;
+}
+.container{
+    width: 100%;
+    height: 100%;
+    background: #43455a;
+}
+
+.menu ul{
+    display: inline-flex;
+    margin: 35px;
+}
+
+.menu ul li{
+    list-style: none;
+    margin: 0px 20px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.logo{
+    width: 30px;
+    margin-top: -7px;
+    margin-right: 48px; 
+}
+
+.active{
+    color: #06adf5 ;
+}
+
+.info{
+    width: 50%;
+    float: left;
+}
+
+.info h1{
+    font-size: 43px;
+    width: 640px;
+    position: relative;
+    margin-left: 40px;
+    color: #00ff66;
+}
+.info h2{
+    font-size: 35px;
+    width: 640px;
+    position: relative;
+    margin-left: 40px;
+    color: #17e0c5;
+}
+.info p{
+    width: 650px;
+    font-size: 15px;
+    margin: 30px 0 30px 40px;
+    line-height: 25px;
+    color: #ffffff;
+}
+
+.i-pic{
+    width: 50%;
+    float: right;
+}
+
+.i-pic img{
+    width: 100%;
+    margin-top: -20px;
+    padding-left: 100px;
+}
+
+.start-learn{
+    margin-left: 40px;
+    display: inline-flex;
+}
+
+.sl-inner{
+    height: 65px;
+    width: 70px;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    background-image: linear-gradient(#42455a, #42455a), radial-gradient(circle at top left,#fd00da, #19d7f8);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    text-align: center;
+}
+
+.sl-inner .fa{
+    padding: 18px 0;
+    cursor: pointer;
+    
+}
+
+small{
+    margin: auto 20px;
+    cursor: pointer;
+    font-size: 12px;
+    color: white;
+    letter-spacing: 3px;
+}
+
+a:link, a:visited {
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+a:hover{
+    background-color: greenyellow;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
