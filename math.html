@@ -27,18 +27,20 @@
       }
 
       #slider {
+        
         width: 80%;
         align-items: center;
       }
 
       #slider-labels {
+        margin-left: 30px;
         display: flex;
         justify-content: space-between;
       }
 
       #slider-labels span {
-        flex: 1;
-        text-align: center;
+        flex: 8;
+        text-align: left;
       }
 
       #slider {
@@ -49,7 +51,37 @@
 
       body {
         background-color: gray;
+        
       }
+      
+
+        .h1-idea {
+          margin-left: 30px;
+            font-size: 65px;
+        }
+
+        .input-button {
+            background-color: #4CAF50; /* Background color */
+            color: white; /* Text color */
+            border: none; /* Remove the border */
+            padding: 10px 20px; /* Add some padding */
+            font-size: 16px;
+            cursor: pointer; /* Change cursor on hover */
+        }
+
+        .input-button:hover {
+            background-color: #45a049;
+        }
+
+        textarea, input[type="text"], input[type="email"] {
+            font-family: "Montserrat", sans-serif;
+            width: 85%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,7 +91,7 @@
     <div class="container">
       <div class="menu">
         <ul>
-          <li class="logo"><img src="images/tree2.png" width="50px" height="50px"/></li>
+          <li class="logo"><img src="/images/tree2.png" width="50px" height="50px"/></li>
           <li class="active"><a href="index.html">Home</a></li>
           <li class="aim"><a href="Science.html">Science</a></li>
           <li class="learn"><a href="math.html">Math</a></li>
@@ -86,7 +118,6 @@
 
     <input type="range" id="slider" min="1" max="6" step="1" />
     <div id="slider-labels">
-      <span>1</span>
       <span>2</span>
       <span>3</span>
       <span>4</span>
@@ -105,6 +136,55 @@
         <div id="q3-label">Q3</div>
         <div id="q4-label">Q4</div>
     </div>
+    <div class="container">
+      <h1>Ratio, Proportion, and Percentages Learning Tool</h1>
+      <p>Enter values for ratio and proportion:</p>
+      <div>
+          <label for="ratioA">Ratio A:</label>
+          <input type="number" id="ratioA" min="0" step="0.01">
+      </div>
+      <div>
+          <label for="ratioB">Ratio B:</label>
+          <input type="number" id="ratioB" min="0" step="0.01">
+      </div>
+      <div>
+          <label for="proportionA">Proportion A:</label>
+          <input type="number" id="proportionA" min="0" step="0.01">
+      </div>
+      <div>
+          <label for="proportionB">Proportion B:</label>
+          <input type="number" id="proportionB" min="0" step="0.01">
+      </div>
+      <button onclick="calculateRatio()">Calculate Ratio</button>
+      <button onclick="calculateProportion()">Calculate Proportion</button>
+
+      <div id="result"></div>
+
+      <div id="charts">
+          <canvas id="ratioChart" width="400" height="200"></canvas>
+          <canvas id="proportionChart" width="400" height="200"></canvas>
+      </div>
+  </div>
+
+    <h1 class="h1-idea">Submit Your Ideas</h1>
+    <p>Have an idea? Share it with us!</p>
+    
+    <form
+        action="https://formspree.io/f/xaygabvr"
+        method="POST"
+    >
+        <label for="idea">Idea:</label><br>
+        <textarea name="idea" id="idea" rows="4" cols="50" placeholder="Type your idea here..." required></textarea><br><br>
+
+        <label for="name">Your Name/Nickname (optional):</label><br>
+        <input type="text" name="name" id="name" placeholder="Type your name/nickname here..."><br><br>
+
+        <label for="email">Your Email (optional):</label><br>
+        <input type="email" name="email" id="email" placeholder="Type your email here..."><br><br>
+
+        <input type="submit" value="Submit" class="input-button">
+    </form>
+
     <div id="coordinates">(0, 0)</div>
     <script>
       const fractionBlocks = document.querySelectorAll(".fraction-block");
@@ -165,6 +245,55 @@
         document.addEventListener('mouseup', () => {
             isDragging = false;
         });
+        
+        function calculateRatio() {
+            const ratioA = parseFloat(document.getElementById("ratioA").value);
+            const ratioB = parseFloat(document.getElementById("ratioB").value);
+
+            if (!isNaN(ratioA) && !isNaN(ratioB)) {
+                const result = ratioA / ratioB;
+                document.getElementById("result").textContent = `Ratio: ${ratioA}:${ratioB} = ${result.toFixed(2)}`;
+
+                // Create and update the ratio chart
+                const ctx = document.getElementById("ratioChart").getContext("2d");
+                updateChart(ctx, "Ratio", [ratioA, ratioB]);
+            } else {
+                document.getElementById("result").textContent = "Please enter valid numbers for Ratio A and Ratio B.";
+            }
+        }
+
+        function calculateProportion() {
+            const proportionA = parseFloat(document.getElementById("proportionA").value);
+            const proportionB = parseFloat(document.getElementById("proportionB").value);
+
+            if (!isNaN(proportionA) && !isNaN(proportionB)) {
+                const result = (proportionA / proportionB) * 100;
+                document.getElementById("result").textContent = `Proportion: ${proportionA} is ${result.toFixed(2)}% of ${proportionB}`;
+
+                // Create and update the proportion chart
+                const ctx = document.getElementById("proportionChart").getContext("2d");
+                updateChart(ctx, "Proportion", [proportionA, proportionB]);
+            } else {
+                document.getElementById("result").textContent = "Please enter valid numbers for Proportion A and Proportion B.";
+            }
+        }
+
+        function updateChart(ctx, label, data) {
+            new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: [`${label} A`, `${label} B`],
+                    datasets: [{
+                        data: data,
+                        backgroundColor: ["#36A2EB", "#FFCE56"],
+                    }],
+                },
+            });
+        }  
+      document.getElementById("idea").addEventListener("input", function() {
+            this.style.fontFamily = "Montserrat, sans-serif"
+      });
+    </script>
     </script>
     
   </body>
