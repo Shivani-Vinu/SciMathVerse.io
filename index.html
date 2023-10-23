@@ -3,46 +3,111 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="/images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="/images/logo.png" />
     <title>SciMathVerse</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"
+    />
+
+    <style>
+      body {
+        margin: 0%;
+        overflow: hidden;
+        animation: anime 12s infinite;
+        background-size: 200% 200%;
+        background-image: linear-gradient(45deg, #0858d8, #800080, #000);
+      }
+
+      @keyframes anime {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="container">
       <div class="menu">
         <ul>
-          <li class="logo"><img src="images/tree2.png" width="50px" height="50px" /></li>
+          <li class="logo">
+            <img src="images/tree2.png" width="50px" height="50px" />
+          </li>
           <li class="active"><a href="index.html">Home</a></li>
           <li class="aim"><a href="science.html">Science</a></li>
           <li class="learn"><a href="math.html">Math</a></li>
           <li><a href="about.html">About</a></li>
-          
         </ul>
       </div>
-      
+
       <div class="banner">
         <div class="info">
-          <h1>Learn Math and Science</h1>
-          <h2>-The fun way</h2>
-          <p>
-            We teach Math And Science in a fun way to make you enjoy 
-            and understand the topics
-            We Have intertactive features throughout the topic, 
-            We hope you will start learning in the best way!
+          <h1 id="type-h1"></h1>
+          <h2 id="type-h2"></h2>
+          <p
+            style="
+              font-family: Paradiso, 'Times New Roman', Times, serif;
+              font-size: 25px;
+            "
+          >
+            We teach Math And Science in a fun way to make you enjoy and
+            understand the topics We have interactive features throughout the
+            topic, We hope you will start learning in the best way!
           </p>
           <div class="start-learn">
             <div class="sl-inner">
-              <img src="images/keyboard-solid.png" width="60px" height="60px">
+              <img src="images/keyboard-solid.png" width="60px" height="60px" />
             </div>
-            <a href="science.html"><small><b>LEARN MORE HERE!</b></small></a>
+            <a href="science.html"
+              ><small><b>LEARN MORE HERE!</b></small></a
+            >
           </div>
         </div>
-        </div class="i-pic">
-          <img src="images/space.jpeg" width="600px" height="500px">
+        <div class="i-pic">
+          <img src="images/space.jpeg" width="600px" height="500px" />
         </div>
       </div>
     </div>
-    
+
+    <script>
+      const h1Text = "Learn math and science.";
+      const h2Text = "The fun way. Based On sustainbilty!";
+      const typingH1Element = document.getElementById("type-h1");
+      const typingH2Element = document.getElementById("type-h2");
+      let i = 0;
+
+      function typeText(element, text, callback) {
+        if (i < text.length) {
+          element.textContent += text.charAt(i);
+          i++;
+          setTimeout(() => typeText(element, text, callback), 100); // Adjust typing speed (in milliseconds)
+        } else {
+          callback(); // Call the callback function when typing is complete
+        }
+      }
+
+      // Start typing effect for h1 and h2 when the page loads
+      window.onload = function () {
+        typeText(typingH1Element, h1Text, () => {
+          i = 0;
+          typeText(typingH2Element, h2Text, () => {
+            // Typing is complete for both h1 and h2
+          });
+        });
+      };
+    </script>
   </body>
 </html>
