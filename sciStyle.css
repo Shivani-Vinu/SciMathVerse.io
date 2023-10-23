@@ -133,22 +133,26 @@ a:hover{
 .info-1 h1{
    color: #00ff66;
     font-size: 69px;
+    background-color: #5b63a7;
 }
 .info-1 h2{
     color: #ffaa00;
      font-size: 40px;
     padding-top: 30px;
+    background-color: #5b63a7;
 }
 .info-1 p{
     padding-top: 20px;
     color: #ffffff;
      font-size: 25px;
+     background-color: #5b63a7;
  }
 
 .info-1 h3{
     padding-top: 15px;
     color: #ffea00;
     font-size: 30px;
+    background-color: #5b63a7;
 }
 
 #container{
@@ -192,9 +196,127 @@ a:hover{
     width: 50px;
     height: 20px;
 }
+
 .text-1{
     margin-top: 20px;
     margin-left: 350px;
     font-size: 25px;
-    color: aliceblue;
+    
+}
+
+#container1 {
+    width: 400px;
+    margin: 0 auto;
+}
+
+#phSpeedometer {
+    width: 100%;
+    height: 100px;
+    background-color: #f0f0f0;
+    border: 1px solid #000;
+    position: relative;
+}
+
+#topContainer {
+    display: flex;
+    justify-content: center;
+}
+
+#bottomContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.draggable {
+    width: 80px;
+    height: 80px;
+    background-color: #3498db;
+    border: 1px solid #000;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 80px;
+    color: #fff;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.batteryAcid, .stomachAcid, .vinegar, .orangeJuice, .tomato, .blackCoffee, .milk, .water, .seaWater, .bakingSoda, .indigestionTablet, .ammoniaSolution, .soapyWater, .bleach, .drainCleaner {
+    width: 80px;
+    height: 80px;
+}
+
+#substanceInfo {
+    margin-top: 20px;
+}
+
+.twoT{
+    color: white;
+}
+h1 {
+    color: #333;
+    
+}
+  
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+  
+button {
+    
+    padding: 10px 20px;
+    background-color: #008CBA;
+    color: #fff;
+    border: none;
+}
+.t2{
+    text-align: center;
+    color: #00ff66;
+    
+}
+#question{
+    text-align: center;
+    color: hsl(0, 0%, 100%);
+}
+#options{
+    padding-left: 500px;
+}
+#score{
+    padding-left: 500px;
+    color: #ffea00;
+}
+#answerFeedback{
+    padding-left: 500px;
+    color: rgb(0, 229, 255);
+}
+text{
+    font-size: 15px;
+    color: #00ff66;
+    padding-left: 100px;
+}
+#text-s{
+    margin-left: 50px;
+    margin-right: 50px;
+    font-size: 30px;
+    color: yellow;
+    margin-top: 50px;
+    border: 3px solid black;
+    background-color: #616373;
+}
+.slide-in {
+    opacity: 0; /* Initially, the element is invisible */
+    transform: translateX(100%); /* Start off-screen */
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+
+  /* Define the animation to make elements visible and slide in */
+@keyframes slideInAnimation {
+    0% {
+      transform: translateX(100%); /* Start position off-screen */
+      opacity: 0; /* Initially invisible */
+    }
+    100% {
+      transform: translateX(0); /* End position on-screen */
+      opacity: 1; /* Fully visible */
+    }
 }
