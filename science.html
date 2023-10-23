@@ -4,19 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="/images/logo.png" />
-    <title>Learn Science</title>
+    <title>Learn Science-EduSparkX</title>
     <link rel="stylesheet" href="sciStyle.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"
     />
+    <style>
+      body {
+        animation: anime 60s infite;
+        background-size: 200% 200%;
+        background-image: linear-gradient(45deg, #32d808, #00805e, #60ccba);
+      }
+
+      @keyframes anime {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="container">
       <div class="menu">
         <ul>
           <li class="logo">
-            <img src="images/tree2.png" width="50px" height="50px" />
+            <img src="/images/tree2.png" width="50px" height="50px" />
           </li>
           <li class="active"><a href="index.html">Home</a></li>
           <li class="aim"><a href="science.html">Science</a></li>
@@ -49,45 +68,189 @@
         problems!
       </p>
       <p>
-        Using the REUSE REDUCE AND RECYCLE we can sort trash into poper
+        Using the <b>REUSE REDUCE AND RECYCL</b>E we can sort trash into poper
         categories for easy recyle!
       </p>
-      <p>Eventually leaing to a more sustanaible environment!</p>
+      <p>Eventually leading to a more sustanaible environment!</p>
     </div>
-    <div class="text-1"><h1>Play A Trash Sorting Game!</h1></div>
+    <div class="text-1" style="color: rgb(104, 184, 255)" ;>
+      <h1>Play A Trash Sorting Game!</h1>
+    </div>
     <div id="container">
       <div id="scoreboard">Score: 0</div>
       <div id="TrashBins">
         <ul id="Bins">
           <li id="GENERAL">
-            <img src="images/general.png" width="100px" height="100px" />
+            <img src="/images/general.png" width="100px" height="100px" />
           </li>
           <li id="PLASTIC">
-            <img src="plasticbin.png" width="100px" height="100px" />
+            <img src="/images/plasticbin.png" width="100px" height="100px" />
           </li>
           <li id="PAPER">
-            <img src="paperbin.png" width="100px" height="100px" />
+            <img src="/images/paperbin.png" width="100px" height="100px" />
           </li>
           <li id="CANS">
-            <img src="canbin.png" width="100px" height="100px" />
+            <img src="/images/canbin.png" width="100px" height="100px" />
           </li>
         </ul>
       </div>
       <div id="Path">
-        <div id="paper" style="display: none">
-          <img src="images/paper.png" width="40px" height="40px" />
+        <div class="draggable" id="paper" style="display: none">
+          <img src="/images/paper.png" width="40px" height="40px" />
         </div>
-        <div id="plastic" style="display: none">
-          <img src="images/water.png" width="40px" height="40px" />
+        <div class="draggable" id="plastic" style="display: none">
+          <img src="/images/water.png" width="40px" height="40px" />
         </div>
-        <div id="cans" style="display: none">
-          <img src="images/can.png" width="40px" height="40px" />
+        <div class="draggable" id="cans" style="display: none">
+          <img src="/images/can.png" width="40px" height="40px" />
         </div>
-        <div id="general" style="display: none">
-          <img src="images/banana.jpg" width="40px" height="40px" />
+        <div class="draggable" id="general" style="display: none">
+          <img src="/images/banana.jpg" width="40px" height="40px" />
         </div>
       </div>
     </div>
+    <div id="text-s">
+      <h1 class="t2">Acid and Base!</h1>
+      <p class="text">
+        An acid is any hydrogen-containing substance that is capable of donating
+        a proton (hydrogen ion) to another substance. A base is a molecule or
+        ion able to accept a hydrogen ion from an acid. The Acidity of soil is
+        also important for farmer and even scientists as it helps in better
+        farming!
+      </p>
+    </div>
+
+    <hr hight="3px" />
+    <center><h1 class="twoT">Drag and Drop pH Checker</h1></center>
+    <div id="container1">
+      <div id="phSpeedometer">pH: <span id="phValue">-</span></div>
+      <div id="topContainer">
+        <img
+          src="/images/battery-acid-image.PNG"
+          class="draggable batteryAcid"
+          data-ph="0"
+          data-name="Battery Acid"
+          draggable="true"
+        />
+        <img
+          src="/images/stomach-acid.PNG"
+          class="draggable stomachAcid"
+          data-ph="1"
+          data-name="Stomach Acid"
+          draggable="true"
+        />
+        <img
+          src="/images/vinegar-image.PNG"
+          class="draggable vinegar"
+          data-ph="2"
+          data-name="Vinegar"
+          draggable="true"
+        />
+        <img
+          src="/images/orange-juice-image.PNG"
+          class="draggable orangeJuice"
+          data-ph="3"
+          data-name="Orange Juice"
+          draggable="true"
+        />
+        <img
+          src="/images/tomato-image.PNG"
+          class="draggable tomato"
+          data-ph="4"
+          data-name="Tomato"
+          draggable="true"
+        />
+        <img
+          src="/images/black-coffee-image.PNG"
+          class="draggable blackCoffee"
+          data-ph="5"
+          data-name="Black Coffee"
+          draggable="true"
+        />
+        <img
+          src="/images/milk-image.PNG"
+          class="draggable milk"
+          data-ph="6"
+          data-name="Milk"
+          draggable="true"
+        />
+      </div>
+      <div id="bottomContainer">
+        <img
+          src="/images/water-image.PNG"
+          class="draggable water"
+          data-ph="7"
+          data-name="Water"
+          draggable="true"
+        />
+        <img
+          src="/images/seawater-image.PNG"
+          class="draggable seaWater"
+          data-ph="8"
+          data-name="Sea Water"
+          draggable="true"
+        />
+        <img
+          src="/images/baking-soda.PNG"
+          class="draggable bakingSoda"
+          data-ph="9"
+          data-name="Baking Soda"
+          draggable="true"
+        />
+        <img
+          src="/images/indigestion-tablet.PNG"
+          class="draggable indigestionTablet"
+          data-ph="10"
+          data-name="Indigestion Tablet"
+          draggable="true"
+        />
+        <img
+          src="/images/ammonia-solution.PNG"
+          class="draggable ammoniaSolution"
+          data-ph="11"
+          data-name="Ammonia Solution"
+          draggable="true"
+        />
+        <img
+          src="/images/soapy-water.PNG"
+          class="draggable soapyWater"
+          data-ph="12"
+          data-name="Soapy Water"
+          draggable="true"
+        />
+        <img
+          src="/images/bleach-image.PNG"
+          class="draggable bleach"
+          data-ph="13"
+          data-name="Bleach"
+          draggable="true"
+        />
+        <img
+          src="/images/drain-cleaner-image.PNG"
+          class="draggable drainCleaner"
+          data-ph="14"
+          data-name="Drain Cleaner"
+          draggable="true"
+        />
+      </div>
+      <div id="substanceInfo">
+        <p><strong>Name:</strong> <span id="substanceName">-</span></p>
+        <p>
+          <strong>Acidity/Basicity:</strong> <span id="substanceType">-</span>
+        </p>
+      </div>
+    </div>
+    <hr />
+    <h1 class="t2">Quiz Game</h1>
+    <div id="question"></div>
+
+    <div id="options" class="options"></div>
+    <center>
+      <button id="checkButton">Check</button>
+      <button id="nextButton">Next</button>
+    </center>
+    <span id="score">Score: 0</span>
+    <p id="answerFeedback"></p>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js"></script>
     <script src="script.js"></script>
   </body>
