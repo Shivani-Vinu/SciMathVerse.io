@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="/images/logo.png">
-    <title>SciMathVerse</title>
+    <title>About us -EduSparkX</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" />
+    
   </head>
   <body>
     <div class="container">
@@ -21,9 +22,27 @@
         </ul>
       </div>
       <div class="text-9">
-        <H1>About Us!</H1>
+        <H1 style="padding-top: -30px;">About Us!</H1>
         <p>This website was created by two developers main work done by Criston and math is done by Shahaan!</p>
         <p>We Worked more than 48 Hours on this project and it is still in developement!</p>
+    <h1 class="title2" style="padding-top: 30px;">Submit Your Ideas</h1>
+    <p>Have an idea? Share it with us!</p>
+    
+    <form
+        action="https://formspree.io/f/xaygabvr"
+        method="POST"
+    >
+        <label for="idea">Idea:</label><br>
+        <textarea name="idea" id="idea" rows="4" cols="50" placeholder="Type your idea here..." required></textarea><br><br>
+
+        <label for="name">Your Name/Nickname (optional):</label><br>
+        <input type="text" name="name" id="name" placeholder="Type your name/nickname here..."><br><br>
+
+        <label for="email">Your Email (optional):</label><br>
+        <input type="email" name="email" id="email" placeholder="Type your email here..."><br><br>
+
+        <input type="submit" value="Submit" class="input-button">
+    </form>
       </div>
   </body>
 </html>
